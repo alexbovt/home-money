@@ -1,0 +1,73 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "admin@email.com",
+      "password": "12345678",
+      "name": "admin"
+    }
+  ],
+  "bill": {
+    "value": 10000,
+    "currency": "USD"
+  },
+  "categories": [
+    {
+      "name": "Home",
+      "capacity": 15000,
+      "id": 1
+    },
+    {
+      "name": "Food",
+      "capacity": 10000,
+      "id": 2
+    },
+    {
+      "id": 3,
+      "name": "Car",
+      "capacity": 7000
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "type": "income",
+      "amount": 1250,
+      "category": 2,
+      "date": "12.06.2017 19:49:02",
+      "description": "Food"
+    },
+    {
+      "id": 2,
+      "type": "outcome",
+      "amount": 130,
+      "category": 1,
+      "date": "13.06.2017 19:49:02",
+      "description": "Buy dishwasher"
+    },
+    {
+      "type": "income",
+      "amount": 141,
+      "category": 2,
+      "date": "17.06.2017 14:00:48",
+      "id": 3,
+      "description": "Ikea"
+    },
+    {
+      "type": "outcome",
+      "amount": 24,
+      "category": 2,
+      "date": "17.06.2017 14:00:58",
+      "id": 4,
+      "description": "Food"
+    },
+    {
+      "type": "outcome",
+      "amount": 40,
+      "category": 3,
+      "date": "10.06.2017 14:01:58",
+      "id": 5,
+      "description": "Gas"
+    }
+  ]
+}
