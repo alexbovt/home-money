@@ -3,8 +3,50 @@
     {
       "id": 1,
       "email": "admin@email.com",
-      "password": "12345678",
+      "password": "admin",
       "name": "admin"
+    },
+    {
+      "email": "alex@email.com",
+      "password": "123123",
+      "name": "alex",
+      "id": 2
+    },
+    {
+      "email": "test1@email.com",
+      "password": "123123",
+      "name": "TestName",
+      "id": 3
+    },
+    {
+      "email": "test1@email.com",
+      "password": "123123",
+      "name": "Test1",
+      "id": 4
+    },
+    {
+      "email": "User@email.com",
+      "password": "123123",
+      "name": "Alexxx",
+      "id": 5
+    },
+    {
+      "email": "admin2@test.com",
+      "password": "123123",
+      "name": "Admin2",
+      "id": 6
+    },
+    {
+      "email": "admin3@test.com",
+      "password": "123123",
+      "name": "admin3",
+      "id": 7
+    },
+    {
+      "email": "admin4@test.com",
+      "password": "123123",
+      "name": "test",
+      "id": 8
     }
   ],
   "bill": {
