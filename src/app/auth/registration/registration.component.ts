@@ -4,7 +4,6 @@ import {Router} from '@angular/router';
 
 import {UsersService} from '../../shared/services/users.service';
 import {User} from '../../shared/models/user.model';
-import AuthService from '../../shared/services/auth.service';
 
 @Component({
   selector: 'app-registration',
@@ -17,14 +16,13 @@ export class RegistrationComponent implements OnInit {
 
   constructor(
     private usersServices: UsersService,
-    private router: Router,
-    private  authService: AuthService
+    private router: Router
   ) {
   }
 
   ngOnInit() {
     this.form = new FormGroup({
-      email: new FormControl(null, [Validators.required, Validators.email]),
+      email: new FormControl(null, [Validators.required, Validators.email], this.forbiddenEmails.bind(this)),
       password: new FormControl(null, [Validators.required, Validators.minLength(5)]),
       name: new FormControl(null, [Validators.required]),
       agree: new FormControl(false, [Validators.requiredTrue]),
@@ -46,4 +44,14 @@ export class RegistrationComponent implements OnInit {
     });
   }
 
+  forbiddenEmails(control: FormControl): Promise<any> {
+    return new Promise<any>((resolve) => {
+      this.usersServices.getUserByEmail(control.value).subscribe(user => {
+        if (user) {
+          resolve({forbiddenEmail: true});
+        }
+        resolve(null);
+      });
+    });
+  }
 }

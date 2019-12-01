@@ -4,7 +4,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import _ from 'lodash';
 
 import {UsersService} from '../../shared/services/users.service';
-import {Message, MessageType} from '../../shared/models/message.model';
+import {Message} from '../../shared/models/message.model';
 import AuthService from '../../shared/services/auth.service';
 
 @Component({
@@ -55,10 +55,9 @@ export class LoginComponent implements OnInit {
         if (user) {
           if (user.password === password) {
             this.hideMessage();
-            // window.localStorage.setItem('user', JSON.stringify(user));
-            window.localStorage.setItem('user', JSON.stringify({email: user.email, name: user.name}));
+            window.localStorage.setItem('user', JSON.stringify(user));
             this.authService.login();
-            // this.router.navigate(['']);
+            this.router.navigate(['/system', 'bill']);
           } else {
             this.showMessage(new Message('Wrong password !'));
           }

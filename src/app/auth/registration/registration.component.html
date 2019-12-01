@@ -16,6 +16,9 @@
       <span *ngIf="form.get('email')['errors']['email']">
         Must be a valid email address !
       </span>
+      <span *ngIf="form.get('email')['errors']['forbiddenEmail']">
+        User with {{form.get('email').value}} email exist  !
+      </span>
     </span>
   </div>
   <div class="form-group" [ngClass]="{'has-error': form.get('password').touched && form.get('password').invalid }">
