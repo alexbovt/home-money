@@ -45,7 +45,7 @@ export class RegistrationComponent implements OnInit {
   }
 
   forbiddenEmails(control: FormControl): Promise<any> {
-    return new Promise<any>((resolve) => {
+    return new Promise<any>(resolve => {
       this.usersServices.getUserByEmail(control.value).subscribe(user => {
         if (user) {
           resolve({forbiddenEmail: true});
